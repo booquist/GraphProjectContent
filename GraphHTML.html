@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <main id="main">
+        <meta charset="UTF-8">
+
+        <link href="GraphCss.CSS" rel="stylesheet" type="text/css">
+
+        <!--Sets the title and introduces the students to the game-->
+        <h1 id="title">Y=mx+b</h1>
+        <p> Slope is the value of how inclined a line is in the XY plane. In the equation <strong>Y=mx+b</strong>, the slope is given by the value of <strong>m</strong>, which we can find from a graph by using rise (vertical distance from the origin), divided
+            by run (horizontal distance from the origin).
+        </p>
+
+        <p>
+            The y-intercept is the point where the line intercepts the y-axis. In the equation <strong>Y=mx+b</strong>, the y-intercept is given by the value of <strong>b</strong>, which we can find from a graph by counting the distance of the line from
+            0 on the y-axis.
+        </p>
+
+
+        <!--Creates the canvas for our laser-shooting game-->
+        <canvas id="grid" style=background-color:white width="500" height="500">
+        </canvas>
+
+        <!--Script to draw the laser beam-->
+        <script type="text/javascript" src="GraphJS.js"></script>
+
+        <!--Create a form for the user to manipulate the equation-->
+        <div>Manipulate the equation, and see how the line changes:</div>
+        <form id="equation" oninput="slopeValue.value=parseInt(slope.value);yIntValue.value=parseInt(yint.value)">
+            <div class="slidecontainer">
+                <p>Slope (m):</p>
+                <input type="range" min="-10" max="10" value="1" id="slope" oninput="drawLine()">
+            </div>
+            <p>Y-Intercept (b)</p>
+
+            <div class="slidecontainer">
+                <input type="range" min="-5" max="5" value="0" id="yint" oninput="drawLine()">
+
+            </div>
+            <div class="displayEquation">
+                Y = <strong><output name="slopeValue" for="slope">1</output></strong>x + <output name="yIntValue" for="yint">0</output>
+            </div>
+        </form>
+
+
+
+        <section id="misconceptions">
+            <h3 id="infinite">It's important to remember that our line stretches on forever. Our graphical view just represents a small portion of the line segment.
+            </h3>
+        </section>
+
+        <div>Click here to play the
+            <button type="button" onclick="location.href='AlienHTML.html'">Alien Game</button>
+        </div>
+
+
+
+
+
+
+    </main>
+</head>
+
+</html>
