@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <main id="main">
+        <meta charset="UTF-8">
+
+        <link href="GraphCss.CSS" rel="stylesheet" type="text/css">
+
+        <!--Sets the title and introduces the students to the game-->
+        <h1 id="title">Y=mx+b</h1>
+        <p> Try to adjust the line, and blast the alien!
+        </p>
+
+
+        <!--Creates the canvas for our laser-shooting game-->
+        <canvas id="alien" style=background-color:white width="500" height="500">
+        </canvas>
+
+        <!--Script to draw the laser beam-->
+        <script type="text/javascript" src="AlienJS.js"></script>
+
+        <!--Create a form for the user to manipulate the equation-->
+        <form id="equation" oninput="slopeValue.value=parseInt(slope.value);yIntValue.value=parseInt(yint.value)">
+            <div class="slidecontainer">
+                <p>Slope (m):</p>
+                <input type="range" min="-10" max="10" value="1" id="slope">
+            </div>
+            <p>Y-Intercept (b)</p>
+
+            <div class="slidecontainer">
+                <input type="range" min="-5" max="5" value="0" id="yint">
+
+            </div>
+            <button type="button" onclick="drawLine()">Launch the laser!</button>
+            <div class="displayEquation">
+                Y = <strong><output name="slopeValue" for="slope">1</output></strong>x + <output name="yIntValue" for="yint">0</output>
+            </div>
+        </form>
+
+        <div>Click here to
+            <button type="button" onclick="location.href='GraphHTML.html'">go back</button>
+        </div>
+
+    </main>
+</head>
+
+</html>
