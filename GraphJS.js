@@ -10,6 +10,7 @@ function processCanvas() {
     for (let i = 0; i < 500; i = i + 50) {
         ctx.beginPath();
 
+        //Makes the origin lines bold
         if (i != 250) {
             ctx.strokeStyle = "#A9A9A9";
         } else {

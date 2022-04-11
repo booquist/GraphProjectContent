@@ -10,6 +10,7 @@ function processCanvas() {
     for (let i = 0; i < 500; i = i + 50) {
         ctx.beginPath();
 
+        //Makes the origin lines bold
         if (i != 250) {
             ctx.strokeStyle = "#A9A9A9";
         } else {
@@ -25,6 +26,7 @@ function processCanvas() {
         ctx.stroke();
     }
 
+    //For loops to label our axes
     for (let j = 0; j < 500; j = j + 50) {
         ctx.font = "12px Arial";
         ctx.fillText(j / 50 - 5, j + 2, 265);
@@ -39,6 +41,7 @@ function processCanvas() {
 
 }
 
+//Function to add the alien to our canvas at a specified location
 function addAlien() {
     processCanvas();
 
@@ -50,12 +53,14 @@ function addAlien() {
 
 }
 
+//Displays the text letting the user know if they've hit the alien
 function gameOver() {
     processCanvas();
 
     var count = 10;
     ctx.font = '48px serif';
 
+    //Sets a delay so the user knows they won
     timer = setTimeout(function() {
         count--;
         if (count % 2 == 1) {
@@ -97,4 +102,5 @@ function drawLine() {
     }
 }
 
+//Draws the canvas on load
 window.onload = addAlien;
